@@ -12,11 +12,9 @@ router.get('/mongodb', function (request, response) {
         //get collection of routes
         var Routes = db.collection('Routes');
         //get all Routes with frequency >=1
-        Routes.find({ frequency : { $gte: 0 } }).sort({ name: 1 }).toArray(function (err, docs) {
+        Routes.find({ frequency : { $gte: 1 } }).sort({ name: 1 }).toArray(function (err, docs) {
             if(err) throw err;
-
             response.render('pages/mongodb', {results: docs});
-
         });
 
         //close connection when your app is terminating.
