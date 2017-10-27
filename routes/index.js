@@ -25,7 +25,7 @@ router.get('/mongodb', function (request, response) {
 });//end app.get
 
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Exercise N1' });
+    res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
